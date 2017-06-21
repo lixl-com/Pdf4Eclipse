@@ -49,6 +49,7 @@ public class PDFFileOutline extends ContentOutlinePage {
 
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@SuppressWarnings("unchecked")
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				// if the selection is empty do nothing

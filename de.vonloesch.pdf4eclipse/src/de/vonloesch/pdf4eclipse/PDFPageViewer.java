@@ -174,7 +174,7 @@ public class PDFPageViewer extends Canvas implements PaintListener, IPreferenceC
         zoomFactor = 1.f;
         this.addPaintListener(this);
         
-        IEclipsePreferences prefs = (new InstanceScope()).getNode(de.vonloesch.pdf4eclipse.Activator.PLUGIN_ID);
+        IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode(de.vonloesch.pdf4eclipse.Activator.PLUGIN_ID);
 		prefs.addPreferenceChangeListener(this);
 		
 		highlightLinks = prefs.getBoolean(ToggleLinkHighlightHandler.PREF_LINKHIGHTLIGHT_ID, true);
@@ -441,8 +441,8 @@ public class PDFPageViewer extends Canvas implements PaintListener, IPreferenceC
     	//if (swtImage != null) swtImage.dispose();
 		currentImage = null;
     	
-    	//IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode(de.vonloesch.pdf4eclipse.Activator.PLUGIN_ID);
-    	IEclipsePreferences prefs = (new InstanceScope()).getNode(de.vonloesch.pdf4eclipse.Activator.PLUGIN_ID);
+    	IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode(de.vonloesch.pdf4eclipse.Activator.PLUGIN_ID);
+    	//IEclipsePreferences prefs = (new InstanceScope()).getNode(de.vonloesch.pdf4eclipse.Activator.PLUGIN_ID);
     	prefs.removePreferenceChangeListener(this);
     }
 }

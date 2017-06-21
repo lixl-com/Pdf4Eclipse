@@ -30,6 +30,7 @@ public class SunOutlineNode implements IOutlineNode{
 		this.node = node;
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public IOutlineNode[] getChildren() {
 		IOutlineNode[] tn = new SunOutlineNode[node.getChildCount()];

@@ -145,7 +145,7 @@ public class PDFEditor extends EditorPart implements IResourceChangeListener,
 		ResourcesPlugin.getWorkspace().removeResourceChangeListener(this);
 		if (position != null) position.removePageChangeListener(this);
 		
-        IEclipsePreferences prefs = (new InstanceScope()).getNode(de.vonloesch.pdf4eclipse.Activator.PLUGIN_ID);
+        IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode(de.vonloesch.pdf4eclipse.Activator.PLUGIN_ID);
 		prefs.removePreferenceChangeListener(this);
 		
 		if (f != null) f.close();
@@ -183,7 +183,7 @@ public class PDFEditor extends EditorPart implements IResourceChangeListener,
 		}
 		f = null;
 		try {
-			IEclipsePreferences prefs = (new InstanceScope()).getNode(de.vonloesch.pdf4eclipse.Activator.PLUGIN_ID);
+			IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode(de.vonloesch.pdf4eclipse.Activator.PLUGIN_ID);
 			int r = prefs.getInt(PreferenceConstants.PDF_RENDERER, PDFFactory.STRATEGY_SUN_JPEDAL);
 			f = PDFFactory.openPDFFile(file, r);
 		} catch (FileNotFoundException fnfe) {
@@ -237,12 +237,7 @@ public class PDFEditor extends EditorPart implements IResourceChangeListener,
 					});
 				}
 			} 
-			/*catch (PartInitException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}*/ 
 			catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}				
@@ -461,7 +456,7 @@ public class PDFEditor extends EditorPart implements IResourceChangeListener,
 			showPage(currentPage);
 		}
 		
-        IEclipsePreferences prefs = (new InstanceScope()).getNode(de.vonloesch.pdf4eclipse.Activator.PLUGIN_ID);
+        IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode(de.vonloesch.pdf4eclipse.Activator.PLUGIN_ID);
         
 		prefs.addPreferenceChangeListener(this);
 		
@@ -716,7 +711,6 @@ public class PDFEditor extends EditorPart implements IResourceChangeListener,
 					outline = new PDFFileOutline(this);
 					outline.setInput(n);
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -727,7 +721,6 @@ public class PDFEditor extends EditorPart implements IResourceChangeListener,
 
 	@Override
 	public INavigationLocation createEmptyNavigationLocation() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

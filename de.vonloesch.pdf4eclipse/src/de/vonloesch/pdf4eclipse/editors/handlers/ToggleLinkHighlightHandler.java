@@ -42,7 +42,7 @@ public class ToggleLinkHighlightHandler extends AbstractHandler implements IElem
 		ICommandService service =
 				(ICommandService) PlatformUI.getWorkbench().getService(ICommandService.class);
 		service.refreshElements(command.getId(), null);
-		IEclipsePreferences prefs = (new InstanceScope()).getNode(de.vonloesch.pdf4eclipse.Activator.PLUGIN_ID);
+		IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode(de.vonloesch.pdf4eclipse.Activator.PLUGIN_ID);
 		prefs.putBoolean(PREF_LINKHIGHTLIGHT_ID, ((Boolean) state.getValue()).booleanValue());
 		try {
 			prefs.flush();
@@ -52,6 +52,7 @@ public class ToggleLinkHighlightHandler extends AbstractHandler implements IElem
 		return null;
 	}	
 	
+	@SuppressWarnings("rawtypes")
 	@Override
 	public void updateElement(UIElement element, Map parameters) {
 		ICommandService service =
