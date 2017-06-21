@@ -108,47 +108,6 @@ public class PDFPageViewer extends Canvas implements PaintListener, IPreferenceC
             			}
             		}
             	}
-				/*List<PDFAnnotation> annos = getPage().getAnnots(PDFAnnotation.LINK_ANNOTATION);
-            	for (PDFAnnotation a : annos) {
-            		LinkAnnotation aa = (LinkAnnotation) a;
-            		Rectangle2D r = convertPDF2ImageCoord(aa.getRect());
-            		if (r.contains(e.x, e.y)) {
-            			if (aa.getAction() instanceof GoToAction){
-            				final GoToAction action = (GoToAction) aa.getAction();
-
-            				Display.getDefault().asyncExec(new Runnable() {
-								@Override
-								public void run() {
-									editor.gotoAction(action.getDestination());
-								}
-							});
-            				return;
-            			}
-            			else if (aa.getAction() instanceof UriAction) {
-            				final UriAction action = (UriAction) aa.getAction();
-            				Display.getDefault().asyncExec(new Runnable() {
-								
-								@Override
-								public void run() {
-									
-									try {
-										String uri = action.getUri();
-										if (uri.toLowerCase().indexOf("://") < 0) { //$NON-NLS-1$
-											uri = "http://"+uri; //$NON-NLS-1$
-										}
-										PlatformUI.getWorkbench().getBrowserSupport()
-										.createBrowser("PDFBrowser").openURL(new URL(uri)); //$NON-NLS-1$
-									} catch (PartInitException e) {
-										e.printStackTrace();
-									} catch (MalformedURLException e) {
-										editor.writeStatusLineError(e.getMessage());
-									}
-								}
-							});
-            				return;
-            			}
-            		}
-				}*/
 			}
 			
 			@Override

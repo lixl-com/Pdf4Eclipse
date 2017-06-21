@@ -28,6 +28,13 @@
 			<version>2.0.3</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.jpedal</groupId>
+			<artifactId>jpedal-lgpl</artifactId>
+			<version>4.74b27</version>
+		</dependency>
+
+
 	</dependencies>
 
 

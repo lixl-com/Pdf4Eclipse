@@ -15,6 +15,7 @@ import org.apache.pdfbox.rendering.PDFRenderer;
  * @author Administrator
  * 
  */
+//对中文支持不好，会有异常信息
 public class PdfBoxApp {
 	private static File file = new File("e:/PWS.pdf");
 

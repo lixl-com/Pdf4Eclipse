@@ -30,6 +30,7 @@ public class JPedalPDFFile implements IPDFFile {
 	int pageNumbers;
 
 	public JPedalPDFFile(File f) throws IOException {
+		//System.setProperty("org.jpedal.jai", "true");
 		input = f;
 		decoder = new PdfDecoder(false);
 		FontMappings.setFontReplacements();

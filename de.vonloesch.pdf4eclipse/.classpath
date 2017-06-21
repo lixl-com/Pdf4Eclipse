@@ -4,5 +4,6 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="lib/PDFrenderer.jar"/>
+	<classpathentry kind="lib" path="lib/jpedal-lgpl-4.74b27.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

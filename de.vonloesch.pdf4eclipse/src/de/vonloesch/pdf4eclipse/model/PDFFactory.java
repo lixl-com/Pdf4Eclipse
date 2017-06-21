@@ -78,7 +78,7 @@ public class PDFFactory {
 			}
 			else {
 				f2.close();
-				return new SunPDFFile(file);
+				return new JPedalPDFFile(file);
 			}
 		}
 		return null;
